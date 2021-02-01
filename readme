@@ -1,0 +1,18 @@
+Basic Building Blocks Of An SPA
+
+1. Router
+    -Responsible for manipulating the DOM (Often showing and hiding)
+    -Handles user links and navigation inside the application
+    -Updates URL bar, page titles (can be done through event listening of the url)
+    -The "react-router-dom" library can help.
+
+2. HTTP Library(Optional if you won't communicate with back-end)
+    -Responsible for communication with the back-end of your application
+
+3. State Manager
+    -Throughout the lifespan of the SPA data such as volume levels, video points and even window sizes are to be saved
+    this is the job of the state manager. The Redux library can help do that.
+
+
+4. UI Layer
+    -Literally anything the user sees, from textboxes, through buttons, forms and etc.
