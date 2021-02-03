@@ -40,6 +40,7 @@ function App() {
     //   ? {...task, reminder : !task.reminder} : task
     // ))
 
+    //in case you do not understand the code up there, the one below explains it
     setTasks(tasks.map((task)=>{
 
       if(task.id === id){
