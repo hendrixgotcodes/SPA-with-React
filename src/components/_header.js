@@ -8,7 +8,7 @@ const Header = ({title})=>{
         
         <header className="header">
             <h1>{title}</h1>
-            <Button color='green' innerText='Hello'/>
+            <Button color="rgb(50, 150, 100)" innerText='Hello'/>
 
         </header>
 
