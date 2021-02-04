@@ -2,6 +2,7 @@
 import './App.css';
 import Header from "./components/_header";
 import Task from './components/_tasks';
+import AddTask from './components/_form';
 import {useState} from 'react';
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
       <div className="container">
         
           <Header/>
+          <AddTask />
           {
             tasks.length > 0 ? (
                 <Task tasks={tasks} onDelete={deleteTask}  onToggle={toggleReminder}/>
