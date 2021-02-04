@@ -1,16 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const AddTask = ()=>{
+const AddTask = ({onAdd})=>{
+
+    const [text, setText] = useState('');
+    const [day, setDay] = useState('');
+    const [reminder, setReminder] = useState(false);
+
+    function submitForm(e){
+
+        e.preventDefault();
+
+        onAdd({text, day, reminder});
+
+        setText('');
+        setDay('');
+        setReminder(false);
+
+    }
 
     return(
 
-        <form className="add-form">
+        <form className="add-form" onSubmit={submitForm}>
 
             <div className="form-control">
 
                 <label>
                     Task
-                    <input type="text" placeholder="Add task"/>
+                    <input type="text" placeholder="Add task"
+                        value={text}
+                        onChange = {(e)=> setText(e.target.value)}
+                    />
                 </label>
                 
             </div>
@@ -18,7 +37,10 @@ const AddTask = ()=>{
 
                 <label>
                     Day & Time
-                    <input type="text" placeholder="Add Day & Time"/>
+                    <input type="text" placeholder="Add Day & Time"
+                         value={day}
+                         onChange = {(e)=> setDay(e.target.value)}
+                    />
                 </label>
 
             </div>
@@ -26,7 +48,10 @@ const AddTask = ()=>{
 
                 <label>
                     Set Reminder
-                    <input type="checkbox"/>
+                    <input type="checkbox"
+                     checked={reminder}
+                     onChange = {(e)=> setReminder(e.target.checked)}
+                    />
                 </label>
 
             </div>
